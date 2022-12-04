@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E17CC03F-92D7-469B-A531-F97E5DE10FE5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Projeto_PDS</RootNamespace>
+    <AssemblyName>Projeto_PDS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.4.3.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentWPF, Version=0.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentWPF.0.10.2\lib\net45\FluentWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.2.0.0\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.9.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.9\lib\net462\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.6.1.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.6.1\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.4.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.4.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.30\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BoolToVisible.cs" />
+    <Compile Include="Helpers\SessionHelper.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\CompraDAO.cs" />
+    <Compile Include="Models\CompraItem.cs" />
+    <Compile Include="Models\Sexo.cs" />
+    <Compile Include="Models\SexoDAO.cs" />
+    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioDAO.cs" />
+    <Compile Include="Models\VendaItem.cs" />
+    <Compile Include="SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageAbrirCaixa.xaml.cs">
+      <DependentUpon>PageAbrirCaixa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageCaixa.xaml.cs">
+      <DependentUpon>PageCaixa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageCompra.xaml.cs">
+      <DependentUpon>PageCompra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageDespesa.xaml.cs">
+      <DependentUpon>PageDespesa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageFecharCaixa.xaml.cs">
+      <DependentUpon>PageFecharCaixa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageFuncionario.xaml.cs">
+      <DependentUpon>PageFuncionario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageList\PageCaixaList.xaml.cs">
+      <DependentUpon>PageCaixaList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageList\PageClienteList.xaml.cs">
+      <DependentUpon>PageClienteList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageList\PageDespesaList.xaml.cs">
+      <DependentUpon>PageDespesaList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageList\PageFornecedorList.xaml.cs">
+      <DependentUpon>PageFornecedorList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageList\PageFuncionarioList.xaml.cs">
+      <DependentUpon>PageFuncionarioList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageList\PageProdutoList.xaml.cs">
+      <DependentUpon>PageProdutoList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageProduto.xaml.cs">
+      <DependentUpon>PageProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageCliente.xaml.cs">
+      <DependentUpon>PageCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageMain.xaml.cs">
+      <DependentUpon>PageMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageRelatorio.xaml.cs">
+      <DependentUpon>PageRelatorio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageFornecedor.xaml.cs">
+      <DependentUpon>PageFornecedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PageVenda.xaml.cs">
+      <DependentUpon>PageVenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowCompraProdutoListAdd.xaml.cs">
+      <DependentUpon>WindowCompraProdutoListAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowNovoUsuario.xaml.cs">
+      <DependentUpon>WindowNovoUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowPagamento.xaml.cs">
+      <DependentUpon>WindowPagamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowRecebimento.xaml.cs">
+      <DependentUpon>WindowRecebimento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowTermos.xaml.cs">
+      <DependentUpon>WindowTermos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowUsuario.xaml.cs">
+      <DependentUpon>WindowUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WindowVendaProdutoListAdd.xaml.cs">
+      <DependentUpon>WindowVendaProdutoListAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views_MessageBox\WindowMessageBoxAlerta.xaml.cs">
+      <DependentUpon>WindowMessageBoxAlerta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views_MessageBox\WindowMessageBoxCerto.xaml.cs">
+      <DependentUpon>WindowMessageBoxCerto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views_MessageBox\WindowMessageBoxError.xaml.cs">
+      <DependentUpon>WindowMessageBoxError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views_MessageBox\WindowMessageBoxPergunta.xaml.cs">
+      <DependentUpon>WindowMessageBoxPergunta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowLogin.xaml.cs">
+      <DependentUpon>WindowLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Database\Conexao.cs" />
+    <Compile Include="Helpers\DAOHelper.cs" />
+    <Page Include="SplashScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PageAbrirCaixa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageCaixa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageCompra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageDespesa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageFecharCaixa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageFuncionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageList\PageCaixaList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageList\PageClienteList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageList\PageDespesaList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageList\PageFornecedorList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageList\PageFuncionarioList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageList\PageProdutoList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageRelatorio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageFornecedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PageVenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowCompraProdutoListAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowNovoUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowPagamento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowRecebimento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowTermos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WindowVendaProdutoListAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views_MessageBox\WindowMessageBoxAlerta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views_MessageBox\WindowMessageBoxCerto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views_MessageBox\WindowMessageBoxError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views_MessageBox\WindowMessageBoxPergunta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Caixa.cs" />
+    <Compile Include="Models\CaixaDAO.cs" />
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\ClienteDAO.cs" />
+    <Compile Include="Models\Despesa.cs" />
+    <Compile Include="Models\DespesaDAO.cs" />
+    <Compile Include="Models\Fornecedor.cs" />
+    <Compile Include="Models\FornecedorDAO.cs" />
+    <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\FuncionarioDAO.cs" />
+    <Compile Include="Models\Pagamento.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\ProdutoDAO.cs" />
+    <Compile Include="Models\Recebimento.cs" />
+    <Compile Include="Models\Venda.cs" />
+    <Compile Include="Models\VendaDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Dosis.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagens_Videos\imgAvancar.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icons\IconDashboard.png" />
+    <Resource Include="Icons\IconDespesa.png" />
+    <Resource Include="Icons\IconFornecedor.png" />
+    <Resource Include="Icons\IconFuncionario.png" />
+    <Resource Include="Icons\IconProduto.png" />
+    <Resource Include="Icons\IconRelatorio.png" />
+    <Resource Include="Icons\IconCliente.png" />
+    <Resource Include="Imagens_Videos\Fundo.png" />
+    <Resource Include="Imagens_Videos\Fundo_Azul.png" />
+    <Resource Include="Imagens_Videos\Fundo_Laranja.png" />
+    <Resource Include="Icons\IconMenu.png" />
+    <Resource Include="Icons\IconUser.png" />
+    <Resource Include="Icons\IconCaixa.png" />
+    <Resource Include="Icons\newProduto.png" />
+    <Resource Include="Icons\newUsuario.png" />
+    <Resource Include="Icons\newDespesa.png" />
+    <Resource Include="Icons\newCaixa.png" />
+    <Resource Include="Imagens_Videos\Image.png" />
+    <Resource Include="Imagens_Videos\Image2.png" />
+    <Resource Include="Imagens_Videos\Image1.png" />
+    <Resource Include="Imagens_Videos\imgEntrar.png" />
+    <Resource Include="Imagens_Videos\gradiente.png" />
+    <Resource Include="Imagens_Videos\imgLogin.png" />
+    <Resource Include="Icons\IconLogin.png" />
+    <Resource Include="Icons\IconCompra.png" />
+    <Resource Include="Icons\IconVenda.png" />
+    <Resource Include="Icons\newCompra.png" />
+    <Resource Include="Icons\newVenda.png" />
+    <Resource Include="Icons\IconCheck.png" />
+    <Resource Include="Icons\IconFechar-Gif.gif" />
+    <Resource Include="Icons\IconAlerta.png" />
+    <Resource Include="Icons\IconErro.png" />
+    <Resource Include="Icons\IconInfo.png" />
+    <Resource Include="Icons\IconPergunta.png" />
+    <Resource Include="Icons\IconPagamento.png" />
+    <Resource Include="Icons\IconRecebimento.png" />
+    <Resource Include="Imagens_Videos\imgCartao.png" />
+    <Resource Include="Imagens_Videos\imgUserBorder.png" />
+    <Resource Include="Imagens_Videos\img-removebg-preview.png" />
+    <Resource Include="Imagens_Videos\imgBorder.png" />
+    <Content Include="Imagens_Videos\VideoLogo.mp4" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.6.1\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>

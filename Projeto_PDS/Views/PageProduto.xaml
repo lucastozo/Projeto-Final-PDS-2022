@@ -1,0 +1,132 @@
+﻿<Page x:Class="Projeto_PDS.Views.PageProduto"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projeto_PDS.Views"
+      mc:Ignorable="d" 
+      
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="15"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="Transparent"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+      
+      d:DesignHeight="800" d:DesignWidth="1220"
+      Title="PageProduto">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="190"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="20" Grid.RowSpan="3" Background="Azure" Margin="20 0 20 20">
+        </Border>
+
+        <!--STACK PANEL NOVO FUNCIONARIO-->
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+            <Image Source="/Icons/newProduto.png" Width="100"/>
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Novo Produto" FontSize="30" VerticalAlignment="Center" Margin="20,0,0,0" FontFamily="Leelawadee UI"/>
+                <Label Content="Inserir informações para um novo produto" FontSize="13" VerticalAlignment="Center" Margin="20,0,0,0" FontFamily="Leelawadee UI"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!--STACK PANEL INFORMACOES-->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <StackPanel Margin="0,0,0,10">
+                <TextBox x:Name="txtNome" Padding="8"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Width="900"
+                          Height="50"
+                          materialDesign:HintAssist.Hint="Nome"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Center">
+                <TextBox x:Name="txtValorCompra" Padding="8"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Width="500"
+                          Height="50"
+                          materialDesign:HintAssist.Hint="Valor de Compra"/>
+
+                <TextBox x:Name="txtValorVenda" Padding="8"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Width="380"
+                          Height="50"
+                          Margin="20,0,0,0"
+                          materialDesign:HintAssist.Hint="Valor de Venda"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Center">
+                <TextBox x:Name="txtEstoque" Padding="8"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Width="250"
+                          Height="50"
+                          materialDesign:HintAssist.Hint="Estoque"/>
+
+                <TextBox x:Name="txtDescricao" Padding="8"
+                          Style="{StaticResource MaterialDesignFilledTextBox}"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Center"
+                          TextWrapping="Wrap"
+                          Width="630"
+                          Height="50"
+                          Margin="20,0,0,0"
+                          materialDesign:HintAssist.Hint="Descrição"/>
+            </StackPanel>
+        </StackPanel>
+
+        <!--STACK PANEL BOTOES-->
+        <StackPanel Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Orientation="Horizontal">
+            <Button Width="150" Height="50" Foreground="White" x:Name="btLimpar" Background="Transparent" Click="btLimpar_Click" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="25">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#FFF1A132" Offset="0"/>
+                                    <GradientStop Color="#FFFF399B" Offset="1.7"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <TextBlock Text="Limpar" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontFamily="Leelawadee UI" FontWeight="Bold"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Width="150" Height="50" Foreground="White" x:Name="btSalvar" Background="Transparent" Click="btSalvar_Click" Margin="50,0,0,0">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Border CornerRadius="25">
+                            <Border.Background>
+                                <LinearGradientBrush>
+                                    <GradientStop Color="#FFF1A132" Offset="0"/>
+                                    <GradientStop Color="#FFFF399B" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <TextBlock Text="Salvar" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontFamily="Leelawadee UI" FontWeight="Bold"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>
